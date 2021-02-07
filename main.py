@@ -3,14 +3,14 @@ from flask import redirect, session
 import sqlite3
 import hashlib
 import datetime
-from cryptography.fernet import Fernet
 import pyscrypt
 import sys
 import random
 import string
 import requests
 import base64
-from cryptography.fernet import Fernet, InvalidToken
+from cryptography.fernet import Fernet
+from cryptography.fernet import InvalidToken
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
@@ -19,7 +19,6 @@ from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 #config ===========
 salt = b"SeaSalt"  # if you change the salt after creating a database, you will lose all of your data !
 #config ===========
-
 
 
 def encrypt(inputstring, key):
@@ -64,15 +63,11 @@ def get_random_string(length):
     result_str = ''.join(random.choice(letters) for i in range(length))
     return result_str
 
+
 randomkey = generate_key_derivation(salt, str(get_random_string(10))).decode("utf-8")
-print("randomkey: " + randomkey)
-
-
 create_table()
 c.execute('SELECT * FROM DATA')
 rows = c.fetchall()
-
-
 app = Flask(__name__)
 
 
@@ -113,7 +108,6 @@ def passwordpage():
             c.execute("DELETE FROM DATA")
             conn.commit()
         if REMOVEFROMDB is not None and REMOVEFROMDB != "None":
-            print("REMOVEFROMDB:" + REMOVEFROMDB)
             c.execute("DELETE FROM DATA  where ID=?", (REMOVEFROMDB,))
             conn.commit()
         c.execute('SELECT * FROM DATA')
@@ -132,12 +126,10 @@ def passwordpage():
                 resp.set_cookie('cookie', expires=0)  # remove cookie to logout
                 return resp
             rows[number] = (row[0], username, password, row[3], row[4])
-            print(rows[number])
             number = number + 1
-        print(rows)
         return render_template('password.html', rows=rows)
     else:
         return render_template('passwordlogin.html', error="hidden")
 
 
-app.run(host='0.0.0.0', debug=True, threaded=True)
+app.run(host='0.0.0.0', debug=False, threaded=True)
