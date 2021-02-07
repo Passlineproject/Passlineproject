@@ -1,16 +1,17 @@
-### Hi there 👋
+# Passline
 
-<!--
-**Passlineproject/Passlineproject** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+<img src="https://github.com/Passlineproject/Passlineproject/blob/main/passline.png">
 
-Here are some ideas to get you started:
+Passline is **open source** and **ad-free**.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## What can you do with Passline?
+Passline allows you to host your password on your own server in an **encrypted** database.
+The databases is encrypted using **[Fernet encryption](https://cryptography.io/en/latest/fernet.html)** which is based on AES encryption
+
+### Features:
+ - Password generator
+ - Code written in [Python](https://www.python.org/) using [Flask](https://flask.palletsprojects.com/en/1.1.x/), [Pycryptodom](https://github.com/Legrandin/pycryptodome) and many more modules.
+
+
+## License
+This project is under GNU General Public License version 3
