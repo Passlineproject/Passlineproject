@@ -1,6 +1,6 @@
 # Passline
 
-<img style="width: 50px; height: 50px" src="https://github.com/Passlineproject/Passlineproject/blob/main/passline.png">
+<img style="max-width: 50px; max-height: 50px" src="https://github.com/Passlineproject/Passlineproject/blob/main/passline.png">
 
 Passline is **open source** and **ad-free**.
 
