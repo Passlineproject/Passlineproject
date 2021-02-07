@@ -1,0 +1,4 @@
+cryptography==3.3.2
+pyscrypt==1.6.2
+requests==2.25.1
+Flask==1.1.2
