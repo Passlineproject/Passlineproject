@@ -12,7 +12,8 @@ The databases is encrypted using **[Fernet encryption](https://cryptography.io/e
  - Password generator
  - Code written in [Python](https://www.python.org/) using [Flask](https://flask.palletsprojects.com/en/1.1.x/), [Pycryptodom](https://github.com/Legrandin/pycryptodome) and many more modules.
 ### Install:
-copy and execute this command: 
+copy and execute this command:
+
 *pip3 install -r requirements.txt*
 
 ## License
